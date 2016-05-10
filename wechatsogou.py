@@ -80,8 +80,8 @@ def search_gzh_info(name, page):
         cache_re = re.split('微信号：|功能介绍：|认证：|最近文章：', cache_list[0])
         name.append(cache_re[0])
         wechatid.append(cache_re[1])
-        if ".authnamewrite('2')" in cache_re[2]:
-            jieshao.append(cache_re[2].replace(".authnamewrite('2')",''))
+        if "authnamewrite" in cache_re[2]:
+            jieshao.append(cache_re[2][0:-18])
             renzhen.append(cache_re[3])
         else:
             jieshao.append(cache_re[2])
